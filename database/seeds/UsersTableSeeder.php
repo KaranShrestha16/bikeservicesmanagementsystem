@@ -21,6 +21,8 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Karan Shrestha',
                 'email' => 'asd@gmail.com',
                 'password' => Hash::make('asd12345'),
+                'phoneno' => 9860477716,
+                'address' => 'Balaju',
                 'role' => 'admin'
             ]);
         }
