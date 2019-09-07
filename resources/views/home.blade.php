@@ -1,23 +1,41 @@
-@extends('layouts.app')
+@if (Auth::check())
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    @if(auth()->user()->isAdmin())
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <script>window.location = "/admin" </script>
 
-                    Welcome, {{ Auth::user()->name }}
+    @else
+
+    @extends('layouts.app')
+
+    @section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Dashboard</div>
+
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        Welcome, {{ Auth::user()->name }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection
+
+    
+    @endif
+
+@else
+
+<script>window.location = "/login" </script>
+
+@endif
+

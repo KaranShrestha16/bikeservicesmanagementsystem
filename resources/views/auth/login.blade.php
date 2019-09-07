@@ -1,6 +1,14 @@
-@if (Auth::check())
+@if(Auth::check())
 
-    <script>window.location = "/home"</script>
+    @if(auth()->user()->isAdmin())
+
+        <script>window.location = "/admin"</script>
+
+    @else
+
+        <script>window.location = "/home"</script>
+
+    @endif
 
 @else
 
