@@ -56,8 +56,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                    
-                                    <a class="dropdown-item" href="{{ route('users.edit-profile') }}">
-                                       Update Profile
+                                    <a class="dropdown-item" href="{{ route('users.view-profile') }}">
+                                       My Profile
                                     </a>
 
                                     <a class="dropdown-item" href="#">
