@@ -2,7 +2,7 @@
 
     @if(auth()->user()->isAdmin())
 
-    @extends('layouts.app')
+    @extends('layouts.app2')
 
         @section('content')
         <div class="container">
