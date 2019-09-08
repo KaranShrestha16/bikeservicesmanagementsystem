@@ -14,31 +14,31 @@
 
             <div class="card-body">
 
-                <img src="" style=" 
-                    width:300px;height:300px;background-color:black;margin-bottom:30px;border-radius:50%;margin-left:30%;
+                <img src="{{ asset('john.jpg') }}" style=" 
+                    width:300px;height:300px;margin-bottom:30px;border-radius:50%;margin-left:30%;
                 " alt="">
                 
                 <table class="table">
 
                     <tbody>
                         <tr>
-                            <td>Name: </td>
-                            <td>{{ $user->name }}</td>
+                            <td style="font-size:18px;"><b>Name: </b></td>
+                            <td style="font-size:18px;">{{ $user->name }}</td>
                         </tr>
 
                         <tr>
-                            <td>Email</td>
-                            <td>{{ $user->email }}</td>
+                            <td style="font-size:18px;"><b>Email:</b></td>
+                            <td style="font-size:18px;">{{ $user->email }}</td>
                         </tr>
 
                         <tr>
-                            <td>Address</td>
-                            <td>{{ $user->address }}</td>
+                            <td style="font-size:18px;"><b>Address:</b></td>
+                            <td style="font-size:18px;">{{ $user->address }}</td>
                         </tr>
 
                         <tr>
-                            <td>Phone No</td>
-                            <td>{{ $user->phoneno }}</td>
+                            <td style="font-size:18px;"><b>Phone No:</b></td>
+                            <td style="font-size:18px;">{{ $user->phoneno }}</td>
                         </tr>
 
                     </tbody>
