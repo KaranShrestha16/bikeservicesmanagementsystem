@@ -25,6 +25,6 @@ Route::get('/users/profile', 'UserController@view')->name('users.view-profile');
 
 Route::get('/users/edit_profile', 'UserController@edit')->name('users.edit-profile');
 
-Route::get('/users/update_profile', 'UserController@update')->name('users.update-profile');
+Route::put('/users/update_profile', 'UserController@update')->name('users.update-profile');
 
 
