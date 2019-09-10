@@ -23,6 +23,6 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('/users/profile', 'UserController@view')->name('users.view-profile');
 
-Route::get('/users/profile', 'UserController@edit')->name('users.view-edit');
+Route::get('/users/edit_profile', 'UserController@edit')->name('users.edit-profile');
 
 

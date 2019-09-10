@@ -45,7 +45,7 @@
 
                 </table>
 
-                <a href="{{ route('users.edit-profile') }}" class="btn btn-success">Update Profile</a>
+                <a href="{{ route('users.edit-profile') }}" class="btn btn-success">Edit Profile</a>
 
             </div>
         </div>
