@@ -113,8 +113,12 @@ class MechanicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Mechanic $mechanic)
     {
-        //
+        $mechanic->delete();
+
+        session()->flash('success', 'Mechanic Deleted Successfully');
+
+        return redirect(route('mechanics.index'));
     }
 }
