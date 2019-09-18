@@ -14,7 +14,7 @@ class MechanicController extends Controller
      */
     public function index()
     {
-        //
+        return view('mechanic.index')->with('mechanic', Mechanic::all());
     }
 
     /**
@@ -36,7 +36,7 @@ class MechanicController extends Controller
     public function store(Request $request)
     {   
 
-        
+
 
         //Created for testing purpose
         // Mechanic::create([
