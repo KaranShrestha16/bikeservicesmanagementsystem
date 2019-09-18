@@ -72,9 +72,9 @@ class MechanicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Mechanic $mechanic)
     {
-        //
+        return view('mechanic.create')->with('mechanic', $mechanic);
     }
 
     /**
@@ -84,15 +84,27 @@ class MechanicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Mechanic $mechanic)
+    public function update(CreateMechanicRequest $request, Mechanic $mechanic)
     {
-        $data = request()->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'contact' => 'required'
+        
+        $mechanic->update([
+            'name' => $request->name,
+            'address' => $request->address,
+            'contact' => $request->contact
         ]);
 
-        $mechanic->update($data);
+        session()->flash('success', 'Mechanic Updated Successfully');
+
+        return redirect(route('mechanics.index'));
+
+        //Created for testing purpose
+        // $data = request()->validate([
+        //     'name' => 'required',
+        //     'address' => 'required',
+        //     'contact' => 'required'
+        // ]);
+
+        // $mechanic->update($data);
     }
 
     /**
