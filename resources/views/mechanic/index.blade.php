@@ -22,7 +22,6 @@
                     <thead>
 
                         <th>Name</th>
-                        <th>Posts Count</th>
                         <th></th>
                     </thead>
 
@@ -34,8 +33,6 @@
                                 <td>
                                     {{ $mechanics->name }}
                                 </td>
-
-                                <td>{{ $mechanics->count() }}</td>
 
                                 <td>
                                     <a href="{{route('mechanics.edit', $mechanics->id)}}" class="btn btn-info btn-sm">

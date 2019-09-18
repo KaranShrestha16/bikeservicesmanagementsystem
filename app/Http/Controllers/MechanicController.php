@@ -84,9 +84,15 @@ class MechanicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Mechanic $mechanic)
     {
-        //
+        $data = request()->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'contact' => 'required'
+        ]);
+
+        $mechanic->update($data);
     }
 
     /**
