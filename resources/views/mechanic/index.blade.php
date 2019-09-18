@@ -4,7 +4,7 @@
     
     <div class="d-flex justify-content-end mb-2">
 
-    <a href="categories/create" class="btn btn-success">Add Mechanic</a>
+    <a href="{{route('mechanics.create')}}" class="btn btn-success">Add Mechanic</a>
 
     </div>
 
@@ -35,7 +35,7 @@
                                     {{ $mechanics->name }}
                                 </td>
 
-                                <td>{{ $mechanics->posts->count() }}</td>
+                                <td>{{ $mechanics->count() }}</td>
 
                                 <td>
                                     <a href="{{route('mechanics.edit', $mechanics->id)}}" class="btn btn-info btn-sm">
@@ -65,7 +65,7 @@
             <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
 
-                <form action="" method="POST" id="deleteCategoryForm">
+                <form action="" method="POST" id="deleteMechanicForm">
 
                     @csrf
 
@@ -106,7 +106,7 @@
         function handleDelete(id)
         {
 
-            var form = document.getElementById('deleteCategoryForm')
+            var form = document.getElementById('deleteMechanicForm')
             form.action = '/mechanics/' + id
             $('#DeleteModal').modal('show')
         }

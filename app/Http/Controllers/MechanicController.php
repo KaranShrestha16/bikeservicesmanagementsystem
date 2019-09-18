@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Mechanic\CreateMechanicRequest;
 use App\Mechanic;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class MechanicController extends Controller
      */
     public function create()
     {
-        //
+        return view('mechanic.create');
     }
 
     /**
@@ -33,10 +34,18 @@ class MechanicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateMechanicRequest $request)
     {   
 
+        Mechanic::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'contact' => $request->contact,
+        ]); 
 
+        session()->flash('success', 'Mechanic Created Successfully');
+
+        return redirect(route('mechanics.index'));
 
         //Created for testing purpose
         // Mechanic::create([
