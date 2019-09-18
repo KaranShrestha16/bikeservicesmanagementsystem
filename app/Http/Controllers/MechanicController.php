@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mechanic;
 use Illuminate\Http\Request;
 
 class MechanicController extends Controller
@@ -33,8 +34,16 @@ class MechanicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+
+        
+
+        //Created for testing purpose
+        // Mechanic::create([
+        //     'name' => request('name'),
+        //     'address' => request('address'),
+        //     'contact' => request('contact'),
+        // ]);
     }
 
     /**

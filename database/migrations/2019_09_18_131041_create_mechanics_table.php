@@ -15,6 +15,9 @@ class CreateMechanicsTable extends Migration
     {
         Schema::create('mechanics', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('address');
+            $table->integer('contact');
             $table->timestamps();
         });
     }

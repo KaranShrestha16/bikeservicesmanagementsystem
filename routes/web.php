@@ -27,4 +27,6 @@ Route::get('/users/edit_profile', 'UserController@edit')->name('users.edit-profi
 
 Route::put('/users/update_profile', 'UserController@update')->name('users.update-profile');
 
+Route::resource('mechanics', 'MechanicController');
+
 
