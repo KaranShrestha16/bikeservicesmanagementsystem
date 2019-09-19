@@ -45,4 +45,25 @@ class MechanicTest extends TestCase
         /////   ./vendor/bin/phpunit --filter mechanics_can_be_updated    ///////////
     } 
 
+    /** @test */
+    public function mechanic_can_be_deleted(){
+
+        $this-> withoutExceptionHandling();
+
+        $this-> post(route('mechanics.store'), [
+            'name'=>'Harikumar',
+            'contact'=>'1234567890',
+            'address'=>'Nepal'
+        ]);
+
+        $mechanic= Mechanic::first();
+        $this->assertCount(1,Mechanic::all());
+
+        $response=$this->delete(route('mechanics.update', $mechanic->id));
+
+        $this->assertCount(0,Mechanic::all());
+
+        /////   ./vendor/bin/phpunit --filter mechanic_can_be_deleted    ///////////
+    }
+
 }
