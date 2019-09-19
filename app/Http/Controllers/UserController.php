@@ -23,15 +23,35 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        $user->update([
-            'name' => $request->name,
-            'phoneno' => $request->phoneno,
-            'address' => $request->address
-        ]);
+        if(isset($request->image))
+        {
+            $image = $request->image->store('users');
 
-        session()->flash('success', 'User Profile Updated');
+            $user->update([
+                'name' => $request->name,
+                'phoneno' => $request->phoneno,
+                'address' => $request->address,
+                'image' => $image
+            ]);
 
-        return redirect(route('users.view-profile'));
+            session()->flash('success', 'User Profile Updated');
+    
+            return redirect(route('users.view-profile'));
+        } else
+        {
+
+            $user->update([
+                'name' => $request->name,
+                'phoneno' => $request->phoneno,
+                'address' => $request->address
+            ]);
+    
+    
+            session()->flash('success', 'User Profile Updated');
+    
+            return redirect(route('users.view-profile'));
+        }
+
     }
 
     public function edit_password()

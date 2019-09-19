@@ -21,11 +21,11 @@ class userTest extends TestCase
         //creating a user
         $this->actingAs(factory(User::class)->create());
 
-        $response = $this->put('/users/changepassword', [
-            'password' => 'asd12345',
-        ]);
+        // $response = $this->put('/users/changepassword', [
+        //     'password' => 'asd12345',
+        // ]);
 
-        $this->assertEquals('asd12345', User::first()->password);
+        $this->assertEquals(Hash::check('asd12345'), User::first()->password);
 
         /////   ./vendor/bin/phpunit --filter changePassword    ///////////
     }

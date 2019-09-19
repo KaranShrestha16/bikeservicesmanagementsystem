@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->enum('role', ['normal','admin'])->default('normal');
             $table->integer('phoneno');
             $table->string('address');
+            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
