@@ -57,7 +57,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                    
                                     <a class="dropdown-item" href="#">
-                                       Update Profile
+                                       My Profile
                                     </a>
 
                                     <a class="dropdown-item" href="#">
@@ -108,21 +108,21 @@
                 <div class="row">
                     <div class="col-md-4">
 
-                        <ul class="list-group">
+                    <ul class="list-group">
 
-                            <li class="list-group-item">
-                                <a href="#">View Booking</a>
-                            </li>
-                            
-                            <li class="list-group-item">
-                                <a href="#">Booking Inquiry</a>
-                            </li>
-                            
-                            <li class="list-group-item">
-                                <a href="{{route('mechanics.index')}}">Mechanics</a>
-                            </li>
+                        <li class="list-group-item">
+                            <a href="#">View Booking</a>
+                        </li>
 
-                        </ul>
+                        <li class="list-group-item">
+                            <a href="#">Booking Inquiry</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <a href="{{route('mechanics.index')}}">Mechanics</a>
+                        </li>
+
+                    </ul>
 
                         <ul class="list-group mt-5">
 
@@ -149,11 +149,9 @@
             
         </main>
     </div>
-    
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('scripts')
 
 </body>
 </html>
                     
+
+
