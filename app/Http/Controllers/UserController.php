@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Users\UpdatePasswordRequest;
 use App\Http\Requests\Users\UpdateProfileRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -27,7 +29,7 @@ class UserController extends Controller
             'address' => $request->address
         ]);
 
-        session()->flash('success', 'User Proifile Updated');
+        session()->flash('success', 'User Profile Updated');
 
         return redirect(route('users.view-profile'));
     }
@@ -35,6 +37,19 @@ class UserController extends Controller
     public function edit_password()
     {
         return view('user.edit_password')->with('user', auth()->user());
+    }
+    
+    public function update_password(UpdatePasswordRequest $request)
+    {
+        $user = auth()->user();
+
+        $user->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        session()->flash('success', 'User Password Updated');
+
+        return redirect(route('users.view-profile'));
     }
 
 }
