@@ -21,6 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
-Route::get('/users/profile', 'UserController@edit')->name('users.view-profile');
+Route::get('/users/profile', 'UserController@view')->name('users.view-profile');
+
+Route::get('/users/edit_profile', 'UserController@edit')->name('users.edit-profile');
+
+Route::put('/users/update_profile', 'UserController@update')->name('users.update-profile');
 
 
