@@ -14,7 +14,7 @@
 
             <div class="card-body">
 
-                <img src="{{ asset('storage/' . $user->image) }}" style=" 
+                <img src="{{ is_null(($user->image)) ? Gravatar::src($user->email) : asset('storage/' . $user->image) }}" style=" 
                     width:300px;
                     height:300px;
                     margin-bottom:30px;
