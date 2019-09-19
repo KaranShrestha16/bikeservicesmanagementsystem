@@ -14,9 +14,15 @@
 
             <div class="card-body">
 
-                <img src="{{ asset('john.jpg') }}" style=" 
-                    width:300px;height:300px;margin-bottom:30px;border-radius:50%;margin-left:30%;
-                " alt="">
+                <img src="{{ Gravatar::src($user->email) }}" style=" 
+                    width:300px;
+                    height:300px;
+                    margin-bottom:30px;
+                    border-radius:50%;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;"
+                    alt="Profile Picture">
                 
                 <table class="table">
 

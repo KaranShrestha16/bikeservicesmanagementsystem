@@ -119,7 +119,7 @@
                             </li>
                             
                             <li class="list-group-item">
-                                <a href="#s">Extra</a>
+                                <a href="#">extra</a>
                             </li>
 
                         </ul>
