@@ -32,4 +32,9 @@ class UserController extends Controller
         return redirect(route('users.view-profile'));
     }
 
+    public function edit_password()
+    {
+        return view('user.edit_password')->with('user', auth()->user());
+    }
+
 }
