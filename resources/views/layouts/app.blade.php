@@ -108,7 +108,7 @@
                         <ul class="list-group">
 
                             <li class="list-group-item">
-                                <a href="#">Booking Form</a>
+                            <a href="{{route('bookings.index')}}">Booking Form</a>
                             </li>
                             
                             <li class="list-group-item">

@@ -33,4 +33,7 @@ Route::put('/users/update_password', 'UserController@update_password')->name('us
 
 Route::resource('mechanics', 'MechanicController');
 
+Route::resource('bookings', 'BookingController');
+
+
 
