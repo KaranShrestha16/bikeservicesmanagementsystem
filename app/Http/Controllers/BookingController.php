@@ -25,7 +25,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-       
+        return view('booking.view')->with('booking', Booking::all());
     }
 
     /**

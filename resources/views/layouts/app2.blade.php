@@ -113,7 +113,7 @@
                         </li>
 
                         <li class="list-group-item">
-                            <a href="#">Booking Inquiry</a>
+                        <a href="{{route('bookings.create')}}">Booking Inquiry</a>
                         </li>
 
                         <li class="list-group-item">
