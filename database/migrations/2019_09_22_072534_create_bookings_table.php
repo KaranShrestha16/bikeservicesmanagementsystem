@@ -17,7 +17,7 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('id');
             $table->string('vehicle_brand');
             $table->string('vehicle_name');
-            $table->integer('vehicle_number');
+            $table->string('vehicle_number');
             $table->string('service_type');
             $table->string('service_date');
             $table->string('service_time');

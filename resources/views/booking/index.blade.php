@@ -8,16 +8,18 @@
                 <div class="card-header">{{ __('Booking Form') }}</div>
 
                 <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="{{route('bookings.store')}}">
                         @csrf
 
+                        <input name="user_id" id="user_id" type="hidden" value="{{$user->id}}" >
+
                         <div class="form-group row">
-                            <label for="vehicle_band" class="col-md-4 col-form-label text-md-right">{{ __('Vehicle Band:') }}</label>
+                            <label for="vehicle_brand" class="col-md-4 col-form-label text-md-right">{{ __('Vehicle Brand:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="vehicle_band" type="text" class="form-control @error('vehicle_band') is-invalid @enderror" name="vehicle_band"  required autocomplete="vehicle_band" autofocus>
+                                <input id="vehicle_brand" type="text" class="form-control @error('vehicle_brand') is-invalid @enderror" name="vehicle_brand"  required autocomplete="vehicle_brand" autofocus>
 
-                                @error('vehicle_band')
+                                @error('vehicle_brand')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -97,16 +99,21 @@
 
                         <div class="form-group row">
                             <label for="mechanics" class="col-md-4 col-form-label text-md-right">{{ __('Mechanic Name:') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="mechanics" type="text" class="form-control @error('mechanics') is-invalid @enderror" name="mechanics"  required autocomplete="mechanics" autofocus>
-
-                                @error('mechanics')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            <div class="col-sm-6">
+                                <select name="mechanic_id" class="form-control">
+                                       <option> Select Mechanic</option>
+                                        @if($mechanic->count() > 0)
+                                        @foreach($mechanic as $mechanics)
+                                        @endforeach
+                                        <option value="{{ $mechanics->id }}" >  {{ $mechanics->name }} </option> 
+                                        @else
+                                        <option> <h3 class="text-center">No Mechanics Added Yet</h3></option>  
+                        
+                                    @endif
+                                  
+                               </select>
+                          </div>
+                           
                         </div>
 
                         <div class="form-group row mb-0">

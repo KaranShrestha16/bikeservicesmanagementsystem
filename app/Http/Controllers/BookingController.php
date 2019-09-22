@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\Mechanic;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -14,7 +15,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return view('booking.index');
+        return view('booking.index')->with('user',auth()->user())->with('mechanic',Mechanic::all());
     }
 
     /**
@@ -24,7 +25,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -47,7 +48,9 @@ class BookingController extends Controller
            
         ]); 
 
-        
+        session()->flash('success', 'Bookin g Successfully ');
+
+        return redirect(route('home'));
     }
 
     /**
@@ -94,4 +97,7 @@ class BookingController extends Controller
     {
         //
     }
+
+
+   
 }

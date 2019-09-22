@@ -20,7 +20,7 @@ class BookingTest extends TestCase
         ]);
 
         $response = $this->post(route('bookings.store'), [
-            'vehicle_brand' => 'bajaj',
+            'vehicle_brand' => 'jaba',
             'vehicle_name' => 'pulser 220',
             'vehicle_number' => '789655',
             'service_type' => 'general service',
