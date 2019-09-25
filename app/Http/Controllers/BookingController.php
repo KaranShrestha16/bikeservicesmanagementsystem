@@ -56,7 +56,11 @@ class BookingController extends Controller
       
     }
 
-   
+    public function history()
+    {
+         dd($request);
+       return view('booking.hero');
+    }
 
     /**
      * Show the form for editing the specified resource.

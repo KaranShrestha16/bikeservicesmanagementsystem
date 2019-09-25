@@ -35,5 +35,7 @@ Route::resource('mechanics', 'MechanicController');
 
 Route::resource('bookings', 'BookingController');
 
+Route::get('/bookings/booking_history', 'BookingController@histoty');
+
 
 
