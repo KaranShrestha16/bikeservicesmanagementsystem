@@ -19,7 +19,7 @@ class MechanicTest extends TestCase
             'address'=>'Nepal'
         ]);
 
-        $response->assertOk();
+        $this->assertOk();
         $this->assertCount(1,Mechanic::all());
            
             /////   ./vendor/bin/phpunit --filter store_mechanics    ///////////

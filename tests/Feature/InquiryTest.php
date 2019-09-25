@@ -8,15 +8,18 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class InquiryTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testExample()
-    {
-        $response = $this->get('/');
+    use RefreshDatabase;
+    /** @test */
+    public function store_inquiry(){
+        $this->withoutExceptionHandling();
+        $this-> post(route('inquiry.store'), [
+            'title'=>'Harikumar',
+            'body'=>'I have some problem with your sevices.'
+        ]);
 
-        $response->assertStatus(200);
+        $this->assertOk();
+        $this->assertCount(1,Mechanic::all());
+           
+            /////   ./vendor/bin/phpunit --filter store_inquiry    ///////////
     }
 }
