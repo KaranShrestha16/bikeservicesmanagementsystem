@@ -43,9 +43,13 @@
 
                 <div class="form-group"> 
 
-                    <button class="btn btn-success" >
-                        Update Password
-                    </button>
+                <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-success">
+                                    Update Password
+                                </button>
+                            </div>
+                        </div>
                             
                 </div>
 

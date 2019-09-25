@@ -61,13 +61,13 @@
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
 
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="{{ is_null((Auth::user()->image)) ? Gravatar::src(Auth::user()->email) : asset('storage/' . $user->image) }}" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle" src="{{ is_null((Auth::user()->image)) ? Gravatar::src(Auth::user()->email) : asset('storage/' . Auth::user()->image) }}" alt="Profile image"> </a>
               
                 
 
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="{{ is_null((Auth::user()->image)) ? Gravatar::src(Auth::user()->email) : asset('storage/' . $user->image) }}" alt="Profile image">
+                  <img class="img-md rounded-circle" src="{{ is_null((Auth::user()->image)) ? Gravatar::src(Auth::user()->email) : asset('storage/' . Auth::user()->image) }}" alt="Profile image">
                   <p class="mb-1 mt-3 font-weight-semibold">{{Auth::user()->name}}</p>
                   <p class="font-weight-light text-muted mb-0">{{Auth::user()->email}}</p>
                 </div>
@@ -76,8 +76,8 @@
                     document.getElementById('profile-form').submit();"
                 >My Profile</a>
 
-                <form id="profile-form" action="{{ route('users.edit-profile') }}"  style="display: none;">
-                    @csrf
+                <form id="profile-form" action="{{ route('users.view-profile') }}"  style="display: none;">
+                    
                 </form>
 
                 <a class="dropdown-item" 
@@ -86,7 +86,7 @@
                 >Change Password</a>
 
                 <form id="password-form" action="{{ route('users.edit-password') }}"  style="display: none;">
-                    @csrf
+                    
                 </form>
 
                 <a onclick="event.preventDefault();
@@ -95,7 +95,7 @@
                 </a>
               
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
+                    
                 </form>
 
             </div>
@@ -112,9 +112,9 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile">
-              <img class="img-lg rounded-circle" src="{{ is_null((Auth::user()->image)) ? Gravatar::src(Auth::user()->email) : asset('storage/' . $user->image) }}" alt="Profile image"> </a>
+              <img class="img-lg rounded-circle" src="{{ is_null((Auth::user()->image)) ? Gravatar::src(Auth::user()->email) : asset('storage/' . Auth::user()->image) }}" alt="Profile image"> </a>
             </li>
-            <li class="nav-item nav-category" style="color:#fff;font-size:20px;" >Main Menu</li>
+            <a class="nav-item nav-category" href="/home" style="color:#fff;text-decoration: none;font-size:20px;" >Main Menu</a>
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <i class="menu-icon typcn typcn-document-text"></i>
