@@ -58,8 +58,7 @@ class BookingController extends Controller
 
     public function history()
     {
-         dd($request);
-       return view('booking.hero');
+       //return view('booking.view');
     }
 
     /**

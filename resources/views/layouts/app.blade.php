@@ -16,6 +16,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    @yield('css')
 </head>
 <body>
     <div id="app">
@@ -113,7 +115,7 @@
                             </li>
                             
                             <li class="list-group-item">
-                            <a href="/bookings/booking_history">Booking History</a>
+                            <a href="{{route('booking_history')}}">Booking History</a>
                             </li>
                             
                             <li class="list-group-item">
