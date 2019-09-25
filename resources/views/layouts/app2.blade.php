@@ -109,11 +109,11 @@
                     <ul class="list-group">
 
                         <li class="list-group-item">
-                            <a href="#">View Booking</a>
+                            <a  href="{{route('bookings.create')}}">View Booking</a>
                         </li>
 
                         <li class="list-group-item">
-                        <a href="{{route('bookings.create')}}">Booking Inquiry</a>
+                        <a  href="#">Booking Inquiry</a>
                         </li>
 
                         <li class="list-group-item">

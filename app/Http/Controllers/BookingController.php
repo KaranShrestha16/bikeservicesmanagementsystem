@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use App\Mechanic;
+use App\User;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -36,19 +37,10 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        Booking::create([
-            'vehicle_brand' => $request->vehicle_brand,
-            'vehicle_name' => $request->vehicle_name,
-            'vehicle_number' => $request->vehicle_brand,
-            'service_type' => $request->vehicle_number,
-            'service_date' => $request->service_date,
-            'service_time' => $request->service_time,
-            'mechanic_id' => $request->mechanic_id,
-            'user_id' => $request->user_id,
-           
-        ]); 
-
-        session()->flash('success', 'Bookin g Successfully ');
+        // dd($request);
+        
+        Booking::create($this->validateRequest());
+        session()->flash('success', 'Booking Successfully ');
 
         return redirect(route('home'));
     }
@@ -61,8 +53,10 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+      
     }
+
+   
 
     /**
      * Show the form for editing the specified resource.
@@ -96,6 +90,26 @@ class BookingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    protected function validateRequest(){
+       return request()->validate([ 
+            'vehicle_brand' => 'required|min:3' ,
+            'vehicle_name' => 'required|min:3',
+            'vehicle_number' => 'required|min:3',
+            'service_type' =>'required',
+            'service_date' => 'required',
+            'service_time' => 'required',
+            'mechanic_id' =>'required',
+            'servicing' =>'required',
+            'user_id' => '', 
+            'admin_remark' =>'',
+            'service_charge' =>'',
+            'parts_change' => '',
+            'additional_charge' =>'',
+            
+            
+        ]);
     }
 
 

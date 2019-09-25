@@ -1,16 +1,11 @@
 @extends('layouts.app2')
 
 @section('content')
-    
-    <div class="d-flex justify-content-end mb-2">
 
-    <a href="{{route('mechanics.create')}}" class="btn btn-success">Add Mechanic</a>
-
-    </div>
 
     <div class="card card-default">
         <div class="card-header">
-            Mechanics
+            Booking List
         </div>
 
         <div class="card-body">
@@ -22,10 +17,11 @@
                     <thead>
 
                         <th>SN</th>
-                        <th>User Id </th>
+                        <th>User Name </th>
                         <th>Vehicle Brand </th> 
-                        <th>Vehicle Name </th>
-                        <th>Vehicle Number </th>
+                        <th>Vehicle Name  </th>
+                        <th>Servicing  </th>
+                        <th> Action </th>
 
                     </thead>
 
@@ -38,7 +34,7 @@
                                     {{ $bookings->id }}
                                 </td>
                                 <td>
-                                        {{ $bookings->user_id }}
+                                        {{ $bookings->user->name }}
                                </td>
                                <td>
                                     {{ $bookings->vehicle_brand }}
@@ -47,7 +43,14 @@
                                     {{ $bookings->vehicle_name }}
                                </td>
                                <td>
-                                    {{ $bookings->vehicle_number }}
+                                    {{ $bookings->servicing }}
+                               </td>
+
+                               <td>
+                                   {{-- href="{{route('mechanics.edit', $bookings->id)}} --}}
+                                    <a class="btn btn-info btn-sm">
+                                            Take Action
+                                        </a>
                                </td>
 
                               

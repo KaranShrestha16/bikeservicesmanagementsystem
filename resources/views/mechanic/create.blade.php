@@ -23,6 +23,7 @@
                     @method('PUT')
 
                 @endif
+                
 
                 <div class="form-group">
 
@@ -46,10 +47,22 @@
 
                     <label for="contact">Contact</label>
 
-                        <input type="text" class="form-control" name="contact" value="{{ isset($mechanic) ? 
+                        <input type="number" class="form-control" name="contact" value="{{ isset($mechanic) ? 
                         $mechanic->contact : '' }}">
 
                 </div>
+
+                <div class="form-group">
+                   
+                    <label for="type">Mechanic Type</label>
+                        <select name="type" class="form-control">
+                               <option > Select Mechanic Type</option>
+                                <option value="Advance" > Advance</option> 
+                                <option  value="Basic" > Basic</option>  
+                        </select>
+                   
+                  </div>
+                   
 
                 <div class="form-group"> 
 

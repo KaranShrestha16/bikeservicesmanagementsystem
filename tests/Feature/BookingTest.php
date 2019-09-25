@@ -27,6 +27,7 @@ class BookingTest extends TestCase
             'service_date' => '10/9/2019',
             'service_time' => '9:30',
             'mechanic_id' => '1',
+            'servicing' => 'pending',
             'user_id' => ''
            
             ]);

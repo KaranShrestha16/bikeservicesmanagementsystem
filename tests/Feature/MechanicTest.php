@@ -38,7 +38,8 @@ class MechanicTest extends TestCase
         $response= $this->patch(route('mechanics.update', $mechanic->id),[
             'name'=>'Karanstha',
             'address'=>'Nepal,Kathmandu',
-            'contact'=>1234567891
+            'contact'=>1234567891,
+            'type' => 'hero'
         ]);
         $this->assertEquals('Karanstha',Mechanic::first()->name);
         $this-> assertEquals('Nepal,Kathmandu',Mechanic::first()->address);

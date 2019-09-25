@@ -15,16 +15,19 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('mechanic_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->string('vehicle_brand');
             $table->string('vehicle_name');
             $table->string('vehicle_number');
             $table->string('service_type');
             $table->string('service_date');
             $table->string('service_time');
-            $table->integer('mechanic_id')->unsigned()->nullable();
-            $table->foreign('mechanic_id')->references('id')->on('mechanics');
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('servicing');
+            $table->string('admin_remark');
+            $table->integer('service_charge');
+            $table->string('parts_change');
+            $table->string('additional_charge');
             $table->timestamps();
         });
     }

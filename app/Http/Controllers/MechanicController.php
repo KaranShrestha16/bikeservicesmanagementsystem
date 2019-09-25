@@ -37,22 +37,13 @@ class MechanicController extends Controller
     public function store(CreateMechanicRequest $request)
     {   
 
-        Mechanic::create([
-            'name' => $request->name,
-            'address' => $request->address,
-            'contact' => $request->contact,
-        ]); 
+        Mechanic::create($this->validateRequest()); 
 
         session()->flash('success', 'Mechanic Created Successfully');
 
         return redirect(route('mechanics.index'));
 
-        //Created for testing purpose
-        // Mechanic::create([
-        //     'name' => request('name'),
-        //     'address' => request('address'),
-        //     'contact' => request('contact'),
-        // ]);
+     
     }
 
     /**
@@ -87,11 +78,7 @@ class MechanicController extends Controller
     public function update(CreateMechanicRequest $request, Mechanic $mechanic)
     {
         
-        $mechanic->update([
-            'name' => $request->name,
-            'address' => $request->address,
-            'contact' => $request->contact
-        ]);
+        $mechanic->update($this->validateRequest());
 
         session()->flash('success', 'Mechanic Updated Successfully');
 
@@ -120,5 +107,14 @@ class MechanicController extends Controller
         session()->flash('success', 'Mechanic Deleted Successfully');
 
         return redirect(route('mechanics.index'));
+    }
+
+    protected function validateRequest(){
+        return request()-> validate([
+            'name' => 'required|min:3',
+            'address' => 'required|min:3',
+            'contact' => 'required|numeric|digits:10',
+            'type' => 'required|min:3'
+        ]);
     }
 }

@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
     <div id="app">
@@ -112,7 +113,7 @@
                             </li>
                             
                             <li class="list-group-item">
-                                <a href="#">Booking History</a>
+                            <a href="">Booking History</a>
                             </li>
                             
                             <li class="list-group-item">
@@ -146,10 +147,9 @@
             
         </main>
     </div>
-
-    
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         @yield('scripts')
         
 </body>

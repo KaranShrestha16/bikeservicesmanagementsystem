@@ -18,6 +18,7 @@ class CreateMechanicsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->integer('contact');
+            $table->string('type');
             $table->timestamps();
         });
     }
