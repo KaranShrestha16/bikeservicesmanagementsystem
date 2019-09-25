@@ -58,7 +58,7 @@ class BookingController extends Controller
 
     public function history()
     {
-       //return view('booking.view');
+       return view('booking.history');
     }
 
     /**
