@@ -35,7 +35,9 @@ Route::resource('mechanics', 'MechanicController');
 
 Route::resource('bookings', 'BookingController');
 
-Route::get('/booking_history', 'BookingController@history')->name('booking_history');;
+Route::get('/booking_history', 'BookingController@history')->name('booking_history');
+
+Route::resource('inquiries', 'InquiryController');
 
 
 

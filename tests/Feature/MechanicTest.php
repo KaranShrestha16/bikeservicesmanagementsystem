@@ -13,13 +13,13 @@ class MechanicTest extends TestCase
     /** @test */
     public function store_mechanics(){
         $this->withoutExceptionHandling();
-        $this-> post(route('mechanics.store'), [
+        $response = $this-> post(route('mechanics.store'), [
             'name'=>'Harikumar',
             'contact'=>'1234567890',
             'address'=>'Nepal'
         ]);
 
-        $this->assertOk();
+        $response->assertOk();
         $this->assertCount(1,Mechanic::all());
            
             /////   ./vendor/bin/phpunit --filter store_mechanics    ///////////

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Inquiry;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -12,13 +13,13 @@ class InquiryTest extends TestCase
     /** @test */
     public function store_inquiry(){
         $this->withoutExceptionHandling();
-        $this-> post(route('inquiry.store'), [
+        $response = $this-> post(route('inquiries.store'), [
             'title'=>'Harikumar',
             'body'=>'I have some problem with your sevices.'
         ]);
 
-        $this->assertOk();
-        $this->assertCount(1,Mechanic::all());
+        $response->assertOk();
+        $this->assertCount(1,Inquiry::all());
            
             /////   ./vendor/bin/phpunit --filter store_inquiry    ///////////
     }

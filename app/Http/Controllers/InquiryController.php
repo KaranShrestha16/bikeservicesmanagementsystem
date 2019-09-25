@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Inquiry;
 use Illuminate\Http\Request;
 
 class InquiryController extends Controller
@@ -34,7 +35,11 @@ class InquiryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Created for testing purpose
+        // Inquiry::create([
+        //     'title' => request('title'),
+        //     'body' => request('body')
+        // ]);
     }
 
     /**
