@@ -22,12 +22,13 @@ class CreateBookingsTable extends Migration
             $table->string('vehicle_number');
             $table->string('service_type');
             $table->string('service_date');
+            $table->string('service_request');
             $table->string('service_time');
             $table->string('servicing');
             $table->string('admin_remark');
             $table->integer('service_charge');
             $table->string('parts_change');
-            $table->string('additional_charge');
+            $table->integer('additional_charge');
             $table->timestamps();
         });
     }

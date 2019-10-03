@@ -97,39 +97,40 @@
             <li class="nav-item nav-profile">
               <img class="img-lg rounded-circle" src="{{ is_null((Auth::user()->image)) ? Gravatar::src(Auth::user()->email) : asset('storage/' . Auth::user()->image) }}" alt="Profile image"> </a>
             </li>
+              </li>
             <li class="nav-item nav-category" style="color:#fff;font-size:20px;" >Main Menu</li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Extra</span>
-              </a>
-            </li>
+                <a class="nav-link" href="{{route('mechanics.index')}}">
+                  <i class="menu-icon typcn typcn-shopping-bag"></i>
+                  <span class="menu-title">Mechanics</span>
+                </a>
+
+                <li class="nav-item">
+                <a class="nav-link" href="{{route('service-request')}}">Service Request</a>
+                  </li>
+             
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Booking</span>
+                <span class="menu-title">Servicing</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('bookings.create')}}">View Booking</a>
+                    <a class="nav-link" href="{{route('bookings.create')}}">Pending  </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Booking Inquiry</a>
-                  </li>
+                      <a class="nav-link" href="{{route('complete_service')}}">Complete  </a>
+                    </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="#">Extra</a>
                   </li>
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('mechanics.index')}}">
-                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">Mechanics</span>
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>

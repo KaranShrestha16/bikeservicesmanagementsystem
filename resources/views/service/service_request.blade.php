@@ -5,7 +5,7 @@
 
     <div class="card card-default">
         <div class="card-header">
-            Booking List
+            Service Request List
         </div>
 
         <div class="card-body">
@@ -15,12 +15,12 @@
             <table class="table table-hover">
                     <thead class="thead-dark">
 
-                        <th>SN</th>
-                        <th>User Name </th>
-                        <th>Vehicle Brand </th> 
-                        <th>Vehicle Name  </th>
-                        <th>Servicing  </th>
-                        <th> Action </th>
+                        <th scope="col">SN</th>
+                        <th scope="col" >User Name </th>
+                        <th scope="col">Vehicle Brand </th> 
+                        <th scope="col">Vehicle Name  </th>
+                        <th scope="col" >Service Request Date  </th>
+                        <th scope="col">  Action </th>
 
                     </thead>
 
@@ -42,12 +42,12 @@
                                     {{ $bookings->vehicle_name }}
                                </td>
                                <td>
-                                    {{ $bookings->servicing }}
+                                    {{ $bookings->created_at }}
                                </td>
 
                                <td>
                                    {{-- href="{{route('mechanics.edit', $bookings->id)}} --}}
-                                    <a class="btn btn-info btn-sm">
+                                    <a href="{{route('service-request-view', $bookings->id)}}" class="btn btn-info btn-sm">
                                             Take Action
                                         </a>
                                </td>
@@ -61,7 +61,7 @@
 
             @else
 
-                <h3 class="text-center">No Bookings Yet</h3>
+                <h3 class="text-center">No Bookings Request Yet</h3>
 
             @endif
             

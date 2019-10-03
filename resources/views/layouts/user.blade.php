@@ -95,7 +95,7 @@
                 </a>
               
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    
+                   @csrf 
                 </form>
 
             </div>
@@ -133,7 +133,7 @@
                     <a class="nav-link" href="{{route('bookings.index')}}">Booking Request</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('booking_history')}}">Booking History</a>
+                    <a class="nav-link" href="{{route('booking-history')}}">Booking History</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Extra</a>

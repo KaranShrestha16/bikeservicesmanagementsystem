@@ -32,7 +32,9 @@ class MechanicTest extends TestCase
         $this-> post(route('mechanics.store'), [
             'name'=>'Harikumar',
             'address'=>'Nepal',
-            'contact'=>1234567890
+            'contact'=>1234567890,
+            'type'=>"hero"
+
         ]);
         $mechanic=Mechanic::first();
         $response= $this->patch(route('mechanics.update', $mechanic->id),[

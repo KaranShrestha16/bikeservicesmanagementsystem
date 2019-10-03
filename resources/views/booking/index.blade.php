@@ -142,11 +142,12 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="servicing" value="Pending">
+                        <input type="hidden" name="servicing" value="Wait for approve">
                         <input type="hidden" name="admin_remark" value="No Action Taken Yet">
                         <input type="hidden" name="service_charge" value="0">
                         <input type="hidden" name="parts_change" value="0">
                         <input type="hidden" name="additional_charge" value="0">
+                        <input type="hidden" name="service_request" value="wait for admin approval">
 
                      
 
@@ -181,8 +182,8 @@
 
 
            
-            var service_type = document.getElementById("service_type");
-            var service_type_value = service_type.options[service_type.selectedIndex].value; 
+            const service_type = document.getElementById("service_type");
+            const service_type_value = service_type.options[service_type.selectedIndex].value; 
             
             
          if(service_type_value=="0"){
