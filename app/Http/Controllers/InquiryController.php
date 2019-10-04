@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Inquiry\CreateInquiryRequest;
 use App\Inquiry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InquiryController extends Controller
 {
@@ -33,8 +35,20 @@ class InquiryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateInquiryRequest $request ,Inquiry $inquiry)
     {
+        $inquiry->uid = Auth::user()->id;
+
+        $inquiry->title = $request->title;
+
+        $inquiry->body = $request->body;
+
+        $inquiry->save();
+
+        session()->flash('success', 'Mechanic Created Successfully');
+
+        return redirect('/home');
+
         //Created for testing purpose
         // Inquiry::create([
         //     'title' => request('title'),

@@ -15,8 +15,10 @@ class CreateInquiriesTable extends Migration
     {
         Schema::create('inquiries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('uid');
             $table->string('title');
             $table->string('body');
+            $table->string('response')->nullable();
             $table->timestamps();
         });
     }
