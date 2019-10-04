@@ -115,7 +115,7 @@
                             </li>
                             
                             <li class="list-group-item">
-                            <a href="{{route('booking_history')}}">Booking History</a>
+                            <a href="{{route('booking-history')}}">Booking History</a>
                             </li>
                             
                             <li class="list-group-item">

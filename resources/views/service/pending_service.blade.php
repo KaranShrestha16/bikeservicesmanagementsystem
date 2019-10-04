@@ -5,7 +5,7 @@
 
     <div class="card card-default">
         <div class="card-header">
-            Booking List
+            Pending Service List
         </div>
 
         <div class="card-body">
@@ -47,9 +47,9 @@
 
                                <td>
                                    {{-- href="{{route('mechanics.edit', $bookings->id)}} --}}
-                                    <a class="btn btn-info btn-sm">
-                                            Take Action
-                                        </a>
+                                   <a href="{{route('view-pending', $bookings->id)}}" class="btn btn-info btn-sm">
+                                        Take Action
+                                    </a>
                                </td>
 
                               
