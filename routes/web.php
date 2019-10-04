@@ -35,6 +35,12 @@ Route::resource('mechanics', 'MechanicController');
 
 Route::resource('bookings', 'BookingController');
 
+Route::resource('inquiries', 'InquiryController');
+
+Route::get('inquiry_respond', 'InquiryController@responded')->name('inquiry_respond');
+
+Route::get('inquiry_history', 'InquiryController@history')->name('inquiry_history');
+
 Route::get('/booking-history', 'BookingController@history')->name('booking-history');
 
 Route::get('/service_request', 'BookingController@service_request')->name('service-request');
@@ -48,9 +54,6 @@ Route::get('/complete_service', 'BookingController@complete_service')->name('com
 Route::get('/complete_view/{booking}', 'BookingController@complete_view')->name('complete_view');
 
 Route::put('/update_pending/{booking}', 'BookingController@update_pending')->name('pending-update');
-
-
-
 
 
 
