@@ -37,7 +37,7 @@ class InquiryController extends Controller
      */
     public function history()
     {
-        //return view('inquiry.index')->with('inquiries',Inquiry::where('user_id',Auth::user()->id)->get());
+        return view('inquiry.view')->with('inquiries',Inquiry::where('user_id',Auth::user()->id)->get());
     }
 
     /**
