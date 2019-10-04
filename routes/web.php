@@ -39,5 +39,9 @@ Route::get('/booking_history', 'BookingController@history')->name('booking_histo
 
 Route::resource('inquiries', 'InquiryController');
 
+Route::get('inquiry_respond', 'InquiryController@responded')->name('inquiry_respond');
+
+Route::get('inquiry_history', 'InquiryController@history')->name('inquiry_history');
+
 
 

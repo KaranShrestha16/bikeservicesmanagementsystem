@@ -160,7 +160,7 @@
                     <a class="nav-link" href="{{route('inquiries.create')}}"">Inquiry Form</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Inquiry History</a>
+                    <a class="nav-link" href="{{route('inquiry_history')}}">Inquiry History</a>
                   </li>
                 </ul>
               </div>
@@ -171,6 +171,14 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <!-- Page Title Header Starts-->
+
+            @if(session()->has('success'))
+
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+
+            @endif
 
             @yield('content')
 

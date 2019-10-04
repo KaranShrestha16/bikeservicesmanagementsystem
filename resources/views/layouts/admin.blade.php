@@ -140,25 +140,16 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="menu-icon typcn typcn-document-add"></i>
-                <span class="menu-title">Extra</span>
+                <span class="menu-title">Inquiry</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
+                    <a class="nav-link" href="{{route('inquiries.index')}}">Show Inquiry </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/login.html"> Login </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/register.html"> Register </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
+                    <a class="nav-link" href="{{route('inquiry_respond')}}">Responded Inquiry </a>
                   </li>
                 </ul>
               </div>
@@ -169,6 +160,14 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <!-- Page Title Header Starts-->
+
+            @if(session()->has('success'))
+
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+
+            @endif
 
             @yield('content')
 
