@@ -24,7 +24,7 @@ class InquiryController extends Controller
      */
     public function create()
     {
-        //
+        return view('inquiry.create');
     }
 
     /**
