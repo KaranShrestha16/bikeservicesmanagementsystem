@@ -42,7 +42,7 @@
                                    <td>
                                        {{-- href="{{route('mechanics.edit', $bookings->id)}} --}}
                                    <a href="{{route('bookings.show',$bookings->id)}}" class="btn btn-primary btn-sm">
-                                                Take Action
+                                               View
                                             </a>
                                    </td>
                                 </tr>
