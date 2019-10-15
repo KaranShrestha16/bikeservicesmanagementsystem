@@ -142,9 +142,9 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{route('maps')}}">
                 <i class="menu-icon typcn typcn-th-large-outline"></i>
-                <span class="menu-title">Extra</span>
+                <span class="menu-title">Location</span>
               </a>
             </li>
 

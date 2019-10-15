@@ -72,4 +72,9 @@ class UserController extends Controller
         return redirect(route('users.view-profile'));
     }
 
+    public function maps()
+    {
+        return view('user.map');
+    }
+
 }

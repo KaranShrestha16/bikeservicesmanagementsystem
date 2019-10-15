@@ -56,6 +56,8 @@ Route::middleware(['auth'])->group(function() {
 
     Route::put('/update_pending/{booking}', 'BookingController@update_pending')->name('pending-update');
 
+    Route::get('/maps', 'UserController@maps')->name('maps');
+
 });
 
 
