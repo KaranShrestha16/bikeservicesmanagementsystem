@@ -5,7 +5,7 @@
 
     <div class="card card-default">
         <div class="card-header">
-            Pending Service List
+            Complete Service List
         </div>
 
         <div class="card-body">
@@ -48,7 +48,7 @@
                                <td>
                                    {{-- href="{{route('mechanics.edit', $bookings->id)}} --}}
                                    <a href="{{route('complete_view', $bookings->id)}}" class="btn btn-info btn-sm">
-                                        Take Action
+                                        View
                                     </a>
                                </td>
 

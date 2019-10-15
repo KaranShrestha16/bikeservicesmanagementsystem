@@ -48,7 +48,7 @@
                                <td>
                                    {{-- href="{{route('mechanics.edit', $bookings->id)}} --}}
                                    <a href="{{route('view-pending', $bookings->id)}}" class="btn btn-info btn-sm">
-                                        Take Action
+                                        View
                                     </a>
                                </td>
 
